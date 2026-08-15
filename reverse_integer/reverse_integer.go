@@ -22,7 +22,7 @@ package reverse_integer
 // Output: 21
 //
 
-const max = (2147483648 - 1)/10
+const max = (2147483647)/10
 const min = -2147483648/10
 
 func reverse(x int) int {
