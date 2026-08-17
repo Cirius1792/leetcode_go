@@ -50,10 +50,9 @@ import "testing"
 // Explanation:
 // Reading stops at the first non-digit character 'w'.
 //
-
-func Test_atoi(t* testing.T){
-	testCases := []struct{
-		i string
+func Test_atoi(t *testing.T) {
+	testCases := []struct {
+		i        string
 		expected int
 	}{
 		{"42", 42},
@@ -67,11 +66,18 @@ func Test_atoi(t* testing.T){
 		{"9999999999", 2147483647}, // Test Overflow
 		{"-9999999999", -2147483648},
 	}
-	for _, tc := range testCases{
-		actual := myAtoi(tc.i)
-		if actual != tc.expected{
-			t.Errorf("Expected %d, found %d, for input %s", tc.expected, actual, tc.i)
-		}
+	for _, tc := range testCases {
+		t.Run(tc.i, func(t *testing.T) {
+			t.Parallel()
+			actual := myAtoi(tc.i)
+			if actual != tc.expected {
+				t.Errorf("Expected %d, found %d, for input %s", tc.expected, actual, tc.i)
+			}
+		})
+		// actual := myAtoi(tc.i)
+		// if actual != tc.expected{
+		// 	t.Errorf("Expected %d, found %d, for input %s", tc.expected, actual, tc.i)
+		// }
 	}
 
 }
