@@ -22,19 +22,19 @@ package reverse_integer
 // Output: 21
 //
 
-const max = (2147483647)/10
-const min = -2147483648/10
+const max = (2147483647) / 10
+const min = -2147483648 / 10
 
 func reverse(x int) int {
 	var ret int
 	t := x
-	for t != 0{
-		c := t%10
-		if ((ret>max || (ret>max && c > 7)) || (ret<min || (ret<min && c < -8))){
+	for t != 0 {
+		c := t % 10
+		if (ret > max || (ret > max && c > 7)) || (ret < min || (ret < min && c < -8)) {
 			return 0
 		}
-		ret = ret*10+c
-		t = t/10
+		ret = ret*10 + c
+		t = t / 10
 	}
 	return ret
 }

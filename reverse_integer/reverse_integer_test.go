@@ -26,9 +26,9 @@ func Test_reverseInteger(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := reverse(tc.i)
-		if actual != tc.expected{
+		if actual != tc.expected {
 			t.Errorf("Expected %d, found %d for input %d", tc.expected, actual, tc.i)
 		}
 	}
-	
+
 }
